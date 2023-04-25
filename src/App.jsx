@@ -1,6 +1,9 @@
+// Components
 import IntroVideo from "./components/IntroVideo";
 import Section from "./components/Section";
 import Footer from "./components/Footer";
+import Misc from "./components/Misc";
+
 // Images
 import FreshTopic from "./assets/academy.png";
 import FreshTopic2 from "./assets/story.png";
@@ -20,6 +23,10 @@ import "./style/App.scss";
 import "./style/intro.scss";
 import "./style/section.scss";
 import "./style/footer.scss";
+import "./style/mediaQuary.scss";
+import "./style/misc.scss";
+
+// Mediaquary
 
 const yellow = "#fff100",
   pink = "#ed1e79",
@@ -157,6 +164,7 @@ function App() {
         btnColor={yellow}
       />
       <Footer />
+      <Misc />
     </>
   );
 }
