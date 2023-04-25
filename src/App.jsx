@@ -23,8 +23,9 @@ import "./style/App.scss";
 import "./style/intro.scss";
 import "./style/section.scss";
 import "./style/footer.scss";
-import "./style/mediaQuary.scss";
 import "./style/misc.scss";
+import "./style/mediaQuary.scss";
+import { useEffect } from "react";
 
 // Mediaquary
 
@@ -45,6 +46,30 @@ function App() {
     barat,
     chaiwala,
   } = data;
+
+  const dotCurser = (e) => {
+    const cursor = document.querySelector(".cursor");
+    cursor.style.top = `${e.pageY - 14}px`;
+    cursor.style.left = `${e.pageX - 14}px`;
+
+    const element = e.target;
+    if (element.getAttribute("data-curserpointer")) {
+      cursor.classList.add("cursorHover");
+    } else if (element.getAttribute("data-curserpointerMini")) {
+      cursor.classList.add("cursorHoverMini");
+    } else {
+      cursor.classList.remove("cursorHover");
+      cursor.classList.remove("cursorHoverMini");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", dotCurser);
+    return () => {
+      window.removeEventListener("mousemove", dotCurser);
+    };
+  }, []);
+
   return (
     <>
       <IntroVideo />

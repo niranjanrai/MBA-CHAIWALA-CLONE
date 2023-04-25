@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Section = ({
   h3,
   text,
@@ -11,21 +13,87 @@ const Section = ({
   btnBgColor,
   btnColor,
 }) => {
+  /** Heading Animations */
+  const headingOptions = {
+    initial: {
+      y: "-100%",
+      opacity: 0,
+    },
+    whileInView: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  /** Text Animations */
+
+  const textOptions = {
+    ...headingOptions,
+    transition: {
+      delay: 0.3,
+    },
+  };
+  /** Button Animations */
+  const buttonOptions = {
+    initial: {
+      y: "100%",
+      opacity: 0,
+    },
+    whileInView: {
+      y: 0,
+      opacity: 1,
+    },
+    transition: {
+      delay: 0.3,
+      ease: "easeIn",
+    },
+  };
+  /** Image Animations */
+  const imgOptions = {
+    initial: {
+      acale: 0.1,
+      opacity: 0,
+    },
+    whileInView: {
+      acale: 1,
+      opacity: 1,
+    },
+    transition: {
+      delay: 0.3,
+    },
+  };
+
   return (
     <section className="section" style={{ backgroundColor }}>
       <div>
-        <h3 style={{ color: headingColor }}>{h3}</h3>
-        <p style={{ color: textColor }}> {text} </p>
+        <motion.h3
+          style={{ color: headingColor }}
+          data-curserpointer={true}
+          {...headingOptions}
+        >
+          {h3}
+        </motion.h3>
+        <motion.p
+          style={{ color: textColor }}
+          data-curserpointer={true}
+          {...textOptions}
+        >
+          {text}
+        </motion.p>
 
         {hasBtn && (
-          <button style={{ color: btnColor, backgroundColor: btnBgColor }}>
+          <motion.button
+            style={{ color: btnColor, backgroundColor: btnBgColor }}
+            data-curserpointer={true}
+            {...buttonOptions}
+          >
             {btnTxt}
-          </button>
+          </motion.button>
         )}
       </div>
-      <div>
+      <motion.div {...imgOptions}>
         <img src={imgSrc} style={{ width: imgSize }} alt="ImgSrc" />
-      </div>
+      </motion.div>
     </section>
   );
 };

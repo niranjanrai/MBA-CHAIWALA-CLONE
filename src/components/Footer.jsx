@@ -60,6 +60,7 @@ const Footer = () => {
             href="/"
             className="footerLinks"
             onMouseOver={() => footerLinks(0)}
+            data-curserpointerMini={true}
           >
             Home
           </a>
@@ -68,6 +69,7 @@ const Footer = () => {
             href="/"
             className="footerLinks"
             onMouseOver={() => footerLinks(1)}
+            data-curserpointerMini={true}
           >
             Story
           </a>
@@ -76,6 +78,7 @@ const Footer = () => {
             href="/media"
             className="footerLinks"
             onMouseOver={() => footerLinks(2)}
+            data-curserpointerMini={true}
           >
             Media
           </a>
@@ -83,6 +86,7 @@ const Footer = () => {
             href="/franchise"
             className="footerLinks"
             onMouseOver={() => footerLinks(3)}
+            data-curserpointerMini={true}
           >
             Franchise
           </a>
@@ -90,6 +94,7 @@ const Footer = () => {
             href="/events"
             className="footerLinks"
             onMouseOver={() => footerLinks(4)}
+            data-curserpointerMini={true}
           >
             EventsFranchise
           </a>
@@ -97,6 +102,7 @@ const Footer = () => {
             href="/chaiwalacares"
             className="footerLinks"
             onMouseOver={() => footerLinks(5)}
+            data-curserpointerMini={true}
           >
             Chaiwala- Cares
           </a>

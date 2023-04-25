@@ -6,13 +6,13 @@ const Misc = () => {
     <>
       <div className="cursor"></div>
       <a href="/" className="logo">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo" data-curserpointer={true} />
       </a>
 
-      <a href="/franchise" className="franchiseBtn">
+      <a href="/franchise" className="franchiseBtn" data-curserpointer={true}>
         GET A FRANCHISE
       </a>
-      <BsMouse className="scrollBtn" />
+      <BsMouse className="scrollBtn" data-curserpointer={true} />
     </>
   );
 };
