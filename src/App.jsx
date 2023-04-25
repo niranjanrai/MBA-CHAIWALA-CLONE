@@ -1,5 +1,7 @@
 import IntroVideo from "./components/IntroVideo";
 import Section from "./components/Section";
+import Footer from "./components/Footer";
+// Images
 import FreshTopic from "./assets/academy.png";
 import FreshTopic2 from "./assets/story.png";
 import FranchiseImg from "./assets/franchise.gif";
@@ -10,12 +12,14 @@ import baratImg from "./assets/image1.png";
 import albumImg from "./assets/mba-cares.gif";
 import chaiwalaImg from "./assets/image3.png";
 
+// Data
 import data from "./data/data.json";
 
 // Styles
 import "./style/App.scss";
 import "./style/intro.scss";
 import "./style/section.scss";
+import "./style/footer.scss";
 
 const yellow = "#fff100",
   pink = "#ed1e79",
@@ -152,6 +156,7 @@ function App() {
         btnBgColor={brown}
         btnColor={yellow}
       />
+      <Footer />
     </>
   );
 }
